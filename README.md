@@ -32,7 +32,7 @@
 
   - Forward Selection
   - Backward Selection
-    - ***\Recursive Feature Elimination：\*** RFE is a feature selection method that fits a model and removes the weakest feature (or features) until the specified number of features is reached. Here we adapt `REFCV`  from [yellowbrick.model_selection](https://www.scikit-yb.org/en/latest/api/model_selection/rfecv.html) It selects the best subset of features for the supplied estimator by removing 0 to N features (where N is the number of features) using recursive feature elimination, then selecting the best subset based on the cross-validation score of the model.
+    - **Recursive Feature Elimination：** RFE is a feature selection method that fits a model and removes the weakest feature (or features) until the specified number of features is reached. Here we adapt `REFCV`  from [yellowbrick.model_selection](https://www.scikit-yb.org/en/latest/api/model_selection/rfecv.html) It selects the best subset of features for the supplied estimator by removing 0 to N features (where N is the number of features) using recursive feature elimination, then selecting the best subset based on the cross-validation score of the model.
   - Genetic algorithm
 
 - Feature projection method:
