@@ -74,3 +74,48 @@ import warnings
 warnings.filterwarnings("ignore") # This will ignore all the warnings;
 ```
 
+# Project 2: Distance_matrix
+
+## 0. Data processor
+
+- The same as [Project 1]
+- The way u split the dataset should be the same as project 1!
+- Check the data distribution of each dimension of the feature to avoid heterogenous problem.
+    
+    [ mean + std histgram?]
+    
+
+## 1. Classification
+
+- Use KNN for classification based on features:
+    
+    Here we use KNN from [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html). 
+    
+- Could use K-flod CV to decide the hyper-paramete K in the KNN.
+- Why the training time of KNN << testing time?
+    
+    The training time of KNN is simply the time it takes to **load the training data into memory**. This can be done quickly, especially with modern hardware and efficient data loading techniques.
+    
+    On the other hand, the testing time of KNN is **proportional to the size of the training data, as it needs to compute the distance between the test point and every single training data point.** This can be very time-consuming, especially with large training datasets or high-dimensional feature spaces.
+    
+
+## 2. Try different distance metrics
+
+### 2.1 Method
+
+1. Euclidean distance：
+
+    $L2 distance = sqrt((x1 - x2)^2 + (y1 - y2)^2)$
+
+2. Manhattan distance：
+    
+    $L1 = |x1 - x2| + |y1 - y2|$
+      
+3. Cosine
+
+
+### Supervised metric learning
+
+1. LMNN
+2. NCA
+3. LFDA
