@@ -74,7 +74,7 @@ import warnings
 warnings.filterwarnings("ignore") # This will ignore all the warnings;
 ```
 
-# Project 2: Distance_matrix
+# Project 2: Distance Metrics
 
 ## 0. Data processor
 
@@ -116,6 +116,36 @@ warnings.filterwarnings("ignore") # This will ignore all the warnings;
 
 ### Supervised metric learning
 
+
 1. LMNN
 2. NCA
 3. LFDA
+# Project 3: Zero shot classification
+
+## 0. Data process
+
+- The original dataset consists of 50 animal classes, and the training: test set is divided in a 4:1 ratio. Three rounds of cross-validation (training set: validation set = 27:13)
+
+## 1. Classification methods
+There are three main categories of approaches to zero shot problems: semantic relatedness methods,
+semantic embedding methods, and synthetic methods.
+Here we introduce one method for each categories.
+### 1.1 Semantic Relatedness Methods
+Semantic embedding methods are used to represent words or phrases in a continuous vector space where semantically similar words are mapped to nearby points. These methods can be used to compute the semantic similarity between words or phrases by measuring the distance between their vector representations.
+
+Attribute Label Embedding (ALE) is a method for zero-shot learning that uses attribute vectors as label embeddings. In ALE, each class is embedded in the space of attribute vectors, and a compatibility function is used to measure the similarity between an image and a label embedding.
+
+There are two generic methods to integrate attributes into multi-class classification: Direct Attribute Prediction (DAP) and Indirect Attribute Prediction (IAP), which are depicted in the Figure：
+[DAP and IAP](Figs/DAP_IAP.pdf)
+### 1.2 Semantic Embedding Methods
+Semantic relatedness methods are used to quantitatively measure the relationship between two words or concepts based on the similarity or closeness of their meaning.
+
+SCoRe proposes a new convolutional neural network (CNN) framework for zero-shot learning. The paper considers the role of semantics in zero-shot learning and analyzes the effectiveness of previous approaches according to the form of supervision provided.
+
+[The feature extraction process based on common CNN architectures](Figs/score.pdf)
+
+### 1.3 Synthetic Methods.
+Synthetic methods perform classification by synthesizing fictitious samples. They typically use some form of generative model, such as a variational self-encoder or a generative adversarial network, to learn how to generate samples from category labels. The model then uses these generated samples to train a classifier and uses it to classify real samples.
+
+TF-VAEGAN is a generative model that synthesizes visual features for unseen classes based on their semantic descriptions. The model uses a combination of Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs) to generate semantically consistent features for unseen classes. The model consists of several components: an encoder $E$, a generator $G$, a discriminator $D$, and a semantic embedding decoder $S$.
+[TF_VAEGAN](Figs/TF_VAEGAN.pdf)
